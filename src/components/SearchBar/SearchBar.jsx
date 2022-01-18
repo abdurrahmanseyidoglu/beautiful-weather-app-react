@@ -1,5 +1,4 @@
 import React from "react";
-import { Button } from "../../elements/Button/Button";
 import { InputField } from "../../elements/InputField/InputField";
 
 export const SearchBar = () => {
@@ -9,7 +8,7 @@ export const SearchBar = () => {
         <div className="absolute top-4 left-3"> </div>
         <InputField></InputField>
         <div className="absolute top-2 right-2"></div>
-        <Button></Button>
+
       </div>
     </div>
   );
