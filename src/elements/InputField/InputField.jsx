@@ -36,7 +36,9 @@ export const InputField = (props) => {
           weatherDescriptions: response.data.current.weather_descriptions[0],
         });
       });
+      //Sending data to App.jsx file
       props.onGetWeatherDataFromInputField(weatherData)
+      //----------------------------
 
   };
   // console.log(weatherData);

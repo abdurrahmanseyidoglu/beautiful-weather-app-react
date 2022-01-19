@@ -18,8 +18,6 @@ export const Card = ({weatherDataToCard}) => {
   const [imgType,setImgType] = useState(Preview)
   console.log(weatherDataToCard);
 
-  // const [weatherData,setWeatherData]= useState('')
-  // setWeatherData(props.weatherDataToCard)
   const weatherColors={
     sunny : 'yellow',
 

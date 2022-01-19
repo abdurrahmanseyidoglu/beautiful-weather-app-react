@@ -6,12 +6,12 @@ import { useState } from "react";
 import { InputField } from "./elements/InputField/InputField";
 
 function App() {
+  //Getting data from InputField component
   const [weatherDataToCard, setWeatherDataToCard] = useState()
   const GetWeatherDataFromInputFieldHandler =(weatherData)=>{
     setWeatherDataToCard(weatherData)
-
   }
-  console.log(weatherDataToCard);
+  //---------------------------------------
   return (
     <div className='App'>
       <Header></Header>
