@@ -3,12 +3,13 @@ import React, { useState } from "react";
 
 const api_key = process.env.REACT_APP_WEATHER_API_KEY;
 const url = "http://api.weatherstack.com";
-
-// console.log(`${url}/current?access_key=${api_key}&query=${query}`)
 export const InputField = () => {
+ const [weatherData,setWeatherData] =  useState({
+  temperature:'',
+  weatherDescriptions:''
+  })
   const [city, setCity] = useState("");
-  const [temperature, setTemperature] = useState();
-  const [weatherDescriptions, setWeatherDescriptions] = useState();
+
   const onChangeHandler = (e) => {
     setCity(e.target.value);
     console.log(city);
@@ -18,12 +19,13 @@ export const InputField = () => {
       .get(`${url}/current?access_key=${api_key}&query=${city}&units=m`)
       .then((response) => {
         console.log(response.data)
-
-        setTemperature(response.data.current.temperature);
-        setWeatherDescriptions(response.data.current.weather_descriptions[0]);
+        setWeatherData({
+          temperature:response.data.current.temperature ,
+          weatherDescriptions:response.data.current.weather_descriptions[0]
+        })
       });
   };
-   console.log(temperature,weatherDescriptions);
+   console.log(weatherData);
   return (
     <div>
       <input
