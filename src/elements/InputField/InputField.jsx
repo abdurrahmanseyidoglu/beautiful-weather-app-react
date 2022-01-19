@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 const api_key = process.env.REACT_APP_WEATHER_API_KEY;
 const url = "http://api.weatherstack.com";
-export const InputField = () => {
+export const InputField = (props) => {
  const [weatherData,setWeatherData] =  useState({
   temperature:'',
   weatherDescriptions:''
@@ -25,7 +25,7 @@ export const InputField = () => {
         })
       });
   };
-   console.log(weatherData);
+  props.onGetWeatherData(weatherData)
   return (
     <div>
       <input
