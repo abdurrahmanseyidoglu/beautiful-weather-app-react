@@ -1,33 +1,40 @@
 import axios from "axios";
 import React, { useState } from "react";
 
-const api_key = process.env.REACT_APP_WEATHER_API_KEY;
-const url = "http://api.weatherstack.com";
+// const api_key = process.env.REACT_APP_WEATHER_API_KEY;
+// const url = "http://api.weatherstack.com";
 export const InputField = (props) => {
- const [weatherData,setWeatherData] =  useState({
-  temperature:'',
-  weatherDescriptions:''
-  })
+//  const [weatherData,setWeatherData] =  useState({
+//   temperature:'',
+//   weatherDescriptions:''
+//   })
   const [city, setCity] = useState("");
 
   const onChangeHandler = (e) => {
+    e.preventDefault();
     setCity(e.target.value);
-    console.log(city);
+
   };
-  const onClickHandler = () => {
-    axios
-      .get(`${url}/current?access_key=${api_key}&query=${city}&units=m`)
-      .then((response) => {
-        console.log(response.data)
-        setWeatherData({
-          temperature:response.data.current.temperature ,
-          weatherDescriptions:response.data.current.weather_descriptions[0]
-        })
-      });
-  };
-  props.onGetWeatherDataFromInputField(weatherData)
+  const onSubmitHandler = ()=>{
+
+  }
+
+  // const onClickHandler = () => {
+  //   axios
+  //     .get(`${url}/current?access_key=${api_key}&query=${city}&units=m`)
+  //     .then((response) => {
+  //       console.log(response.data)
+  //       setWeatherData({
+  //         temperature:response.data.current.temperature ,
+  //         weatherDescriptions:response.data.current.weather_descriptions[0]
+  //       })
+  //     });
+  // };
+
+  // props.onGetWeatherDataFromInputField(weatherData)
   return (
-    <div>
+    <div className="container mx-auto flex flex-col justify-center  items-center mt-10 ">
+      <form onSubmit={onSubmitHandler}>
       <input
         type='text'
         onChange={onChangeHandler}
@@ -35,11 +42,12 @@ export const InputField = (props) => {
         placeholder='Location'
       />
       <button
-        onClick={onClickHandler}
+        type='submit'
         className='h-10 w-20 text-white rounded-lg bg-gray-300 hover:bg-gray-400'
       >
         Set
       </button>
+      </form>
     </div>
   );
 };
