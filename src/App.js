@@ -13,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <Header></Header>
-      <SearchBar></SearchBar>
+      <SearchBar ></SearchBar>
       <Card></Card>
       <Footer></Footer>
     </div>

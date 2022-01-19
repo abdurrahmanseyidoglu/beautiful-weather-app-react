@@ -25,7 +25,7 @@ export const InputField = (props) => {
         })
       });
   };
-  props.onGetWeatherData(weatherData)
+  props.onGetWeatherDataFromInputField(weatherData)
   return (
     <div>
       <input
