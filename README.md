@@ -10,4 +10,4 @@
 - then : ```yarn start``` (if you used ```yarn``` previously) or ```npm start``` (if you used ```npm install``` previously)
 
 ## Video of the project : 
-![]()
+![](https://github.com/abdurrahmanseyidoglu/beautiful-weather-app-react/blob/main/Weather%20app.mkv)
