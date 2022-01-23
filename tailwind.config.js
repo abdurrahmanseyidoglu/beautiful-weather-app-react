@@ -3,7 +3,12 @@ module.exports = {
 
 
     theme: {
-        extend: {},
+        extend: {
+            transitionDuration: {
+                '0': '0ms',
+                '2500': '2500ms',
+              }
+        },
     },
     plugins: [],
 }

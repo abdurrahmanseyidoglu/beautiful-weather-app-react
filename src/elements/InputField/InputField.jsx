@@ -26,8 +26,8 @@ export const InputField = (props) => {
           weatherDescriptions: response.data.current.weather_descriptions[0],
         });
       })
-      .catch((err) => {
-        alert(err , city);
+      .catch(() => {
+        alert("Please check the name again 🎃");
       });
     //Sending data to App.jsx file
 

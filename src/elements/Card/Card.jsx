@@ -59,7 +59,7 @@ export const Card = (props) => {
           className={
             toggleCard
               ? "hidden"
-              : "mt-20 w-1/2 flex-col lg:flex-row h-80  shadow-xl flex   place-content-evenly  rounded-lg bg-gray-200 p-3 "
+              : "mt-20 w-1/2 flex-col lg:flex-row h-80  shadow-xl flex  transition ease-in-out duration-2500 place-content-evenly  rounded-lg bg-gray-200 p-3 "
           }
         >
           <div className='img-container flex  items-center justify-center '>
