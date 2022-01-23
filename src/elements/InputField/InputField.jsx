@@ -35,17 +35,17 @@ export const InputField = (props) => {
   };
 
   return (
-    <div className='container mx-auto flex flex-col justify-center  items-center mt-10 '>
-      <form onSubmit={onSubmitHandler}>
+    <div className='container mx-auto flex flex-col justify-center  items-center mt-10  '>
+      <form onSubmit={onSubmitHandler} className='w-full flex items-center justify-center  relitive mr-5' >
         <input
           type='text'
           onChange={(e)=>{onChangeHandler(e)}}
-          className='h-10 w-70 pl-10 pr-20 rounded-lg z-0 focus:shadow focus:outline-none'
+          className='h-10 w-auto  pl-1 pr-20 rounded-lg z-0 focus:shadow focus:outline-none '
           placeholder='Location'
         />
         <button
           type='submit'
-          className='h-10 w-20 text-white rounded-lg bg-gray-300 hover:bg-gray-400'
+          className='h-10 w-20 text-white rounded-lg bg-gray-300 hover:bg-gray-400 absolute ml-56'
         >
           Set
         </button>

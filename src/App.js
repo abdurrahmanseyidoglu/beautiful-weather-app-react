@@ -22,7 +22,7 @@ function App() {
 
   //---------------------------------------
   return (
-    <div className='App'>
+    <div className='App blok flex-col items-center justify-center '>
       <Header onNavColor={navColor}></Header>
       <InputField onGetWeatherDataFromInputField={GetWeatherDataFromInputFieldHandler}></InputField>
       <Card weatherDataToCard={weatherDataToCard} onGetNavColorFromCard={GetNavColorFromCardHandler}></Card>
