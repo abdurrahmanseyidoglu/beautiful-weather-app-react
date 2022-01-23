@@ -15,9 +15,11 @@ import Tornado from "../../assets/images/Tornado.svg";
 
 
 export const Card = ({ weatherDataToCard }) => {
+  const [weatherDetails,setWeatherDetails]=useState('')
+  const [weatherTemp,setWeatherTemp]=useState('')
   const [imgType,setImgType] = useState(Preview)
   // try usestate to store data
-  const[weatherDataa,setWeatherDataa]=useState('')
+  const[handlingWeatherData,setHandlingWeatherData]=useState('')
 
   console.log("-------------------");
 
@@ -31,17 +33,20 @@ export const Card = ({ weatherDataToCard }) => {
   };
 
   useEffect(()=>{
-    setWeatherDataa(weatherDataToCard)
+    setHandlingWeatherData(weatherDataToCard)
 
-    console.log(weatherDataa);
+    console.log(handlingWeatherData);
     if(weatherDataToCard=== '' || weatherDataToCard===undefined ){
       setImgType(Preview)
+
     }
     else if (weatherDataToCard!==undefined) {
 
       for (const key in weather) {
         if ((weatherDataToCard.weatherDescriptions.toLowerCase().includes(key))){
           setImgType(weather[key]);
+          setWeatherDetails(weatherDataToCard.weatherDescriptions)
+          setWeatherTemp(weatherDataToCard.temperature)
         }
         // else (console.log(key.includes(weatherDataToCard.weatherDescriptions.toLowerCase()),key))
 
@@ -54,16 +59,24 @@ export const Card = ({ weatherDataToCard }) => {
   return (
     <div>
       <div className='flex items-center justify-center   '>
-        {/* Initial picture */}
-        <div className='mt-20 w-1/4  h-80  shadow-xl flex items-center justify-center rounded-lg bg-gray-200 p-3'>
-          <img src={imgType} alt='Previwe' className='w-60 h-60 ' />
+
+        <div className='mt-20 w-1/2  h-80  shadow-xl flex flex-row  place-content-evenly  rounded-lg bg-gray-200 p-3 '>
+          <div className='img-container'><img src={imgType} alt='Previwe' className='w-60 h-60 ' /></div>
+          <div className='weather-details flex flex-col items-center justify-center'>
+        <h1 className='font-bold	text-2xl'>{weatherTemp}°</h1>
+        <h2 className='font-bold	text-2xl'>{weatherDetails}</h2>
+
+          </div>
         </div>
       </div>
-      {/* <div className="flex items-center justify-center  ">
+
+    </div>
+  );
+};
+
+
+{/* <div className="flex items-center justify-center  ">
         <div className="mt-20 w-96 h-70  shadow-xl flex items-center justify-center rounded-lg">
           <img src={Preview} alt="Previwe" className="w-60 h-60 " />
         </div>
       </div> */}
-    </div>
-  );
-};
