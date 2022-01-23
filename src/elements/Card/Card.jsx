@@ -6,11 +6,11 @@ import Clouds from "../../assets/images/Clouds.svg";
 import Rain from "../../assets/images/Rain.svg";
 import Snow from "../../assets/images/Snow.svg";
 
-
 export const Card = ({ weatherDataToCard }) => {
   const [weatherDetails, setWeatherDetails] = useState("");
   const [weatherTemp, setWeatherTemp] = useState("");
   const [imgType, setImgType] = useState(Preview);
+  const [toggleCard, setToggleCard] = useState(true);
   // try usestate to store data
   const [handlingWeatherData, setHandlingWeatherData] = useState("");
 
@@ -33,7 +33,8 @@ export const Card = ({ weatherDataToCard }) => {
         if (weatherDataToCard.weatherDescriptions.toLowerCase().includes(key)) {
           setImgType(weather[key]);
           setWeatherDetails(weatherDataToCard.weatherDescriptions);
-          setWeatherTemp(weatherDataToCard.temperature);
+          setWeatherTemp(`${weatherDataToCard.temperature}°`);
+          setToggleCard(false)
         }
       }
     }
@@ -42,24 +43,33 @@ export const Card = ({ weatherDataToCard }) => {
   return (
     <div>
       <div className='flex items-center justify-center   '>
-        <div className='mt-20 w-1/2  h-80  shadow-xl flex flex-row  place-content-evenly  rounded-lg bg-gray-200 p-3 '>
+        <div
+          className={
+            toggleCard
+              ? "hidden"
+              : "mt-20 w-1/2  h-80  shadow-xl flex flex-row  place-content-evenly  rounded-lg bg-gray-200 p-3 "
+          }
+        >
           <div className='img-container flex items-center justify-center '>
             <img src={imgType} alt='Previwe' className='w-40 h-40 ' />
           </div>
-          <div className='weather-details flex flex-col items-center justify-center'>
-            <h1 className='font-bold	text-2xl'>{weatherTemp}°</h1>
+          <div className='weather-details flex flex-col items-center justify-center place-content-between'>
+            <h1 className='font-bold	text-2xl'>{weatherTemp}</h1>
             <h2 className='font-bold	text-2xl'>{weatherDetails}</h2>
+          </div>
+        </div>
+        <div
+          className={
+            toggleCard
+              ? "mt-20 w-1/2  h-80  shadow-xl flex flex-row  place-content-evenly  rounded-lg bg-gray-200 p-3 "
+              : "hidden"
+          }
+        >
+          <div className='mt-20 w-96 h-70   flex items-center justify-center rounded-lg'>
+            <img src={Preview} alt='Previwe' className='w-60 h-60 ' />
           </div>
         </div>
       </div>
     </div>
   );
 };
-
-{
-  /* <div className="flex items-center justify-center  ">
-        <div className="mt-20 w-96 h-70  shadow-xl flex items-center justify-center rounded-lg">
-          <img src={Preview} alt="Previwe" className="w-60 h-60 " />
-        </div>
-      </div> */
-}
