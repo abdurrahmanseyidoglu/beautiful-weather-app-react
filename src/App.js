@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState,useEffect} from "react";
 import "./App.css";
 import Header from "./components/Header/Header";
 import { Card } from "./elements/Card/Card";
@@ -9,7 +9,7 @@ import { InputField } from "./elements/InputField/InputField";
 function App() {
   //Getting data from InputField component
   const [weatherDataToCard, setWeatherDataToCard] = useState(undefined)
-  const [navColor,setNavColor] = useState('#22d3ee')
+  const [navColor,setNavColor] = useState('bg-gray-400')
   const GetWeatherDataFromInputFieldHandler =(weatherData)=>{
     setWeatherDataToCard(weatherData)
 
@@ -19,10 +19,11 @@ function App() {
 
   }
 
+
   //---------------------------------------
   return (
     <div className='App'>
-      <Header navColor={navColor}></Header>
+      <Header onNavColor={navColor}></Header>
       <InputField onGetWeatherDataFromInputField={GetWeatherDataFromInputFieldHandler}></InputField>
       <Card weatherDataToCard={weatherDataToCard} onGetNavColorFromCard={GetNavColorFromCardHandler}></Card>
       <Footer></Footer>

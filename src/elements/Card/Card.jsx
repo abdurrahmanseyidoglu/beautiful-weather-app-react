@@ -17,30 +17,26 @@ export const Card = (props) => {
   const [handlingWeatherData, setHandlingWeatherData] = useState("");
 
   const weather = {
-    clear: [Clear, "yellow"],
-    sunny: [Clear, "yellow"],
-    partly: [PartlyCloud, "#9DA8DF"],
-    cloudy : [Clouds, "#9DA8DF"],
-    overcast:[Clouds, "#9DA8DF"],
-    rain: [Rain, "#4973D1"],
-    snow: [Snow, "#F6F8FF"],
+    clear: [Clear, "bg-amber-400"],
+    sunny: [Clear, "bg-amber-400"],
+    partly: [PartlyCloud, "bg-sky-400"],
+    cloudy: [Clouds, "bg-sky-600"],
+    overcast: [Clouds, "bg-sky-600"],
+    rain: [Rain, "bg-teal-400"],
+    snow: [Snow, "bg-red-700"],
   };
 
   useEffect(() => {
     setHandlingWeatherData(props.weatherDataToCard);
 
     if (
-      props.weatherDataToCard === "" || props.weatherDataToCard === undefined) {
+      props.weatherDataToCard === "" ||
+      props.weatherDataToCard === undefined
+    ) {
       setImgType(Preview);
-    }
-    else if (props.weatherDataToCard !== undefined) {
-      console.log(props.weatherDataToCard);
+    } else if (props.weatherDataToCard !== undefined) {
+
       for (const key in weather) {
-        console.log("key= ", key);
-        console.log(
-          "weatherDataToCard.weatherDescriptions",
-          props.weatherDataToCard.weatherDescriptions.toLowerCase()
-        );
         if (
           props.weatherDataToCard.weatherDescriptions
             .toLowerCase()
