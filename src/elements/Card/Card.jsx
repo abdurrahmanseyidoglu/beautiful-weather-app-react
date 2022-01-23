@@ -21,7 +21,6 @@ export const Card = ({ weatherDataToCard }) => {
   // try usestate to store data
   const[handlingWeatherData,setHandlingWeatherData]=useState('')
 
-  console.log("-------------------");
 
   const weather = {
     "clear": Clear,
@@ -35,7 +34,6 @@ export const Card = ({ weatherDataToCard }) => {
   useEffect(()=>{
     setHandlingWeatherData(weatherDataToCard)
 
-    console.log(handlingWeatherData);
     if(weatherDataToCard=== '' || weatherDataToCard===undefined ){
       setImgType(Preview)
 
@@ -48,7 +46,6 @@ export const Card = ({ weatherDataToCard }) => {
           setWeatherDetails(weatherDataToCard.weatherDescriptions)
           setWeatherTemp(weatherDataToCard.temperature)
         }
-        // else (console.log(key.includes(weatherDataToCard.weatherDescriptions.toLowerCase()),key))
 
     }
       }

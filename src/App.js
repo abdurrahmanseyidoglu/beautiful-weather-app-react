@@ -11,7 +11,7 @@ function App() {
   const [weatherDataToCard, setWeatherDataToCard] = useState(undefined)
   const GetWeatherDataFromInputFieldHandler =(weatherData)=>{
     setWeatherDataToCard(weatherData)
-    console.log("parent");
+
   }
 
   //---------------------------------------

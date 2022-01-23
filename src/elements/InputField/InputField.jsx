@@ -5,10 +5,7 @@ const api_key = process.env.REACT_APP_WEATHER_API_KEY;
 const url = "http://api.weatherstack.com";
 
 export const InputField = (props) => {
-  const [weatherData, setWeatherData] = useState({
-    temperature: "",
-    weatherDescriptions: "",
-  });
+
   const [city, setCity] = useState("");
 
 
