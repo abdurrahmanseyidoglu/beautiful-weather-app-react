@@ -1,4 +1,4 @@
-# Weather application using weatherstack API
+# Weather application using weatherstack API as back-end, Tailwind.css as CSS framework
 
 <br/>
 
