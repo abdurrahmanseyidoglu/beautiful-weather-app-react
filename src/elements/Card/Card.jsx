@@ -5,44 +5,60 @@ import Clear from "../../assets/images/Clear.svg";
 import Clouds from "../../assets/images/Clouds.svg";
 import Rain from "../../assets/images/Rain.svg";
 import Snow from "../../assets/images/Snow.svg";
+import PartlyCloud from "../../assets/images/PartlyCloud.svg";
 
-export const Card = ({ weatherDataToCard }) => {
+export const Card = (props) => {
   const [weatherDetails, setWeatherDetails] = useState("");
   const [weatherTemp, setWeatherTemp] = useState("");
   const [imgType, setImgType] = useState(Preview);
   const [toggleCard, setToggleCard] = useState(true);
+
   // try usestate to store data
   const [handlingWeatherData, setHandlingWeatherData] = useState("");
 
   const weather = {
-    clear: Clear,
-    sunny: Clear,
-    "partly cloudy": Clouds,
-    cloudy: Clouds,
-    rain: Rain,
-    snow: Snow,
+    clear: [Clear, "yellow"],
+    sunny: [Clear, "yellow"],
+    partly: [PartlyCloud, "#9DA8DF"],
+    cloudy : [Clouds, "#9DA8DF"],
+    overcast:[Clouds, "#9DA8DF"],
+    rain: [Rain, "#4973D1"],
+    snow: [Snow, "#F6F8FF"],
   };
 
   useEffect(() => {
-    setHandlingWeatherData(weatherDataToCard);
+    setHandlingWeatherData(props.weatherDataToCard);
 
-    if (weatherDataToCard === "" || weatherDataToCard === undefined) {
+    if (
+      props.weatherDataToCard === "" || props.weatherDataToCard === undefined) {
       setImgType(Preview);
-    } else if (weatherDataToCard !== undefined) {
+    }
+    else if (props.weatherDataToCard !== undefined) {
+      console.log(props.weatherDataToCard);
       for (const key in weather) {
-        if (weatherDataToCard.weatherDescriptions.toLowerCase().includes(key)) {
-          setImgType(weather[key]);
-          setWeatherDetails(weatherDataToCard.weatherDescriptions);
-          setWeatherTemp(`${weatherDataToCard.temperature}°`);
-          setToggleCard(false)
+        console.log("key= ", key);
+        console.log(
+          "weatherDataToCard.weatherDescriptions",
+          props.weatherDataToCard.weatherDescriptions.toLowerCase()
+        );
+        if (
+          props.weatherDataToCard.weatherDescriptions
+            .toLowerCase()
+            .includes(key)
+        ) {
+          setImgType(weather[key][0]);
+          setWeatherDetails(props.weatherDataToCard.weatherDescriptions);
+          setWeatherTemp(`${props.weatherDataToCard.temperature}°`);
+          setToggleCard(false);
+          props.onGetNavColorFromCard(weather[key][1]);
         }
       }
     }
-  }, [weatherDataToCard]);
+  }, [props.weatherDataToCard]);
 
   return (
     <div>
-      <div className='flex items-center justify-center   '>
+      <div className='flex items-center justify-center  '>
         <div
           className={
             toggleCard
@@ -51,11 +67,13 @@ export const Card = ({ weatherDataToCard }) => {
           }
         >
           <div className='img-container flex items-center justify-center '>
-            <img src={imgType} alt='Previwe' className='w-40 h-40 ' />
+            <img src={imgType} alt='Previwe' className='w-32 h-32 ' />
           </div>
           <div className='weather-details flex flex-col items-center justify-center place-content-between'>
-            <h1 className='font-bold	text-2xl'>{weatherTemp}</h1>
-            <h2 className='font-bold	text-2xl'>{weatherDetails}</h2>
+            <h1 className='font-bold	text-7xl text-gray-800 '>{weatherTemp}</h1>
+            <h2 className='font-semibold	text-2xl text-gray-800'>
+              {weatherDetails}
+            </h2>
           </div>
         </div>
         <div
