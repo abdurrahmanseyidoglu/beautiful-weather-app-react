@@ -9,5 +9,5 @@
 - then : ```yarn``` or ```npm install```
 - then : ```yarn start``` (if you used ```yarn``` previously) or ```npm start``` (if you used ```npm install``` previously)
 
-## Gif of the project : 
+## Video of the project : 
 ![]()
