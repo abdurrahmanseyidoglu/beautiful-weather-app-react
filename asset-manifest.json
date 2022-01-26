@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/beautiful-weather-app-react/static/css/main.1faefe1d.css",
-    "main.js": "/beautiful-weather-app-react/static/js/main.7094ba41.js",
+    "main.js": "/beautiful-weather-app-react/static/js/main.fd2b8af9.js",
     "static/media/Preview.svg": "/beautiful-weather-app-react/static/media/Preview.b9c7deb389495ed8d92ff7d3aa678e10.svg",
     "static/media/Snow.svg": "/beautiful-weather-app-react/static/media/Snow.2ccf24fcafc56ac5de6770792d1983b0.svg",
     "static/media/PartlyCloud.svg": "/beautiful-weather-app-react/static/media/PartlyCloud.fd8c0fe3801ba7287206a8073c704f2e.svg",
@@ -10,10 +10,10 @@
     "static/media/Clouds.svg": "/beautiful-weather-app-react/static/media/Clouds.49f8e1d58b0bf4e1742ad4899456abc2.svg",
     "index.html": "/beautiful-weather-app-react/index.html",
     "main.1faefe1d.css.map": "/beautiful-weather-app-react/static/css/main.1faefe1d.css.map",
-    "main.7094ba41.js.map": "/beautiful-weather-app-react/static/js/main.7094ba41.js.map"
+    "main.fd2b8af9.js.map": "/beautiful-weather-app-react/static/js/main.fd2b8af9.js.map"
   },
   "entrypoints": [
     "static/css/main.1faefe1d.css",
-    "static/js/main.7094ba41.js"
+    "static/js/main.fd2b8af9.js"
   ]
 }
