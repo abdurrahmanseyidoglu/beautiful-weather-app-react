@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/css/main.1faefe1d.css",
+    "main.js": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/js/main.515f2f7f.js",
+    "static/media/Preview.svg": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/media/Preview.b9c7deb389495ed8d92ff7d3aa678e10.svg",
+    "static/media/Snow.svg": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/media/Snow.2ccf24fcafc56ac5de6770792d1983b0.svg",
+    "static/media/PartlyCloud.svg": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/media/PartlyCloud.fd8c0fe3801ba7287206a8073c704f2e.svg",
+    "static/media/Rain.svg": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/media/Rain.e83300331ed15c47fd832f8016f38556.svg",
+    "static/media/Clear.svg": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/media/Clear.eec1aaacb970bf28e863a83f4e90541a.svg",
+    "static/media/Clouds.svg": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/media/Clouds.49f8e1d58b0bf4e1742ad4899456abc2.svg",
+    "index.html": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/index.html",
+    "main.1faefe1d.css.map": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/css/main.1faefe1d.css.map",
+    "main.515f2f7f.js.map": "/abdurrahmanseyidoglu.github.io/beautiful-weather-app-react/static/js/main.515f2f7f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1faefe1d.css",
+    "static/js/main.515f2f7f.js"
+  ]
+}
